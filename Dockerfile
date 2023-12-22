@@ -13,6 +13,7 @@ VOLUME /var/s3
 
 ARG S3FS_VERSION=v1.91
 
+RUN echo 'https://mirrors.ustc.edu.cn/alpine/v3.14/main' > /etc/apk/repositories && echo 'https://mirrors.ustc.edu.cn/alpine/v3.14/community' >>/etc/apk/repositories 
 RUN apk --update add bash fuse libcurl libxml2 libstdc++ libgcc alpine-sdk automake autoconf libxml2-dev fuse-dev curl-dev git; \
     git clone https://github.com/s3fs-fuse/s3fs-fuse.git; \
     cd s3fs-fuse; \
